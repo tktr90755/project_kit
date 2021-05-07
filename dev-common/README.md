@@ -14,7 +14,7 @@ webpack: 4.32.2
 
 ### ファイル構成
 ```
-1908_HONDA__web/dev-common/
+project_kit/dev-common/
 │
 ├ gulpfile.babel.js/
 │ ├ config.js [taskのパラメーター設定]
