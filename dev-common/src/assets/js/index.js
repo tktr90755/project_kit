@@ -1,7 +1,6 @@
 $(function($){
   $( "#sns_line" ).click( shareOfLine );
   $( "#sns_twitter" ).click( shareOfTwitter );
-  $( "#sns_twitter2" ).click( shareOfTwitter );
   $( "#sns_facebook" ).click( shareOfFacebook );
 });
 
