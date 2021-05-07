@@ -1,0 +1,45 @@
+<%
+	data.currentNum = 0;
+	data.pankuzu = [
+		{
+			title: "TOP",
+			dir: "コンテンツディレクトリ名"
+		}
+	];
+
+  data.siteName = "";
+  data.description = "";
+  data.keywords = "AAA,BBB,CCC";
+  data.url = "https://sample.jp/";
+  data.ogp = "https://sample.jp/assets/images/ogp.jpg";
+  data.ogpTitle = "";
+
+	data.releaseType = "dev";
+	// data.releaseType = "stg";
+	// data.releaseType = "prd";
+
+%><!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <%- include("../../dev-common/src/include/_head_top", data) %>
+    <%- include("../../dev-common/src/include/_head", data) %>
+    <!-- 各コンテンツのCSS -->
+    <link href="./assets/css/styles.css" rel="stylesheet" type="text/css" />
+    <%- include("../../dev-common/src/include/_head_bottom", data) %>
+  </head>
+
+  <body>
+    <%- include("../../dev-common/src/include/_body_top", data) %>
+    <%- include("../../dev-common/src/include-dev/_dev_header", data) %>
+
+    <div id="wrapper">
+      <%- include("../../dev-common/src/include/_header", data) %>
+    </div>
+
+    <%- include("../../dev-common/src/include/_footer", data) %>
+    <%- include("../../dev-common/src/include-dev/_dev_footer", data) %>
+  </body>
+  <!-- 各コンテンツのJS -->
+  <%- include("../../dev-common/src/include/_scripts", data) %>
+  <script src="./assets/js/scripts.js"></script>
+</html>

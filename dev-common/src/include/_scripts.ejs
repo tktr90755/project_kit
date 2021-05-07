@@ -1,0 +1,69 @@
+  <script src="/assets/common/js/jquery-2.2.3.min.js"></script>
+  <script src="/assets/common/js/jquery.easing.min.js"></script>
+  <script src="/assets/common/js/scrollreveal.min.js"></script>
+  <script src="/assets/common/js/libs.js"></script>
+  <script src="/assets/common/js/common.js"></script>
+  <script>
+function createUser(answer, callback) {
+  var request = new XMLHttpRequest();
+  const targetURL = accessUrl() + "user";
+  request.open("POST", targetURL, true);
+  request.setRequestHeader("Content-Type", "application/json");
+  request.onload = () => {
+    callback(request);
+  };
+  request.onerror = (err) => {
+    
+  };
+  let json = {};
+  json.answer = answer;
+  if(answer)request.send(JSON.stringify(json));
+}
+
+function getUser(userId, callback) {
+  var request = new XMLHttpRequest();
+  const targetURL = accessUrl() + "user/" + userId;
+  request.open("GET", targetURL, true);
+  request.onload = () => {
+    callback(request);
+  };
+  request.onerror = (err) => {
+    
+  };
+  if(userId)request.send();
+}
+
+function saveUser(userId, q_idx, answer, callback) {
+  var request = new XMLHttpRequest();
+  const targetURL = accessUrl() + "user/" + userId;
+  request.open("POST", targetURL, true);
+  request.setRequestHeader("Content-Type", "application/json");
+  request.onload = () => {
+    callback(request);
+  };
+  request.onerror = (err) => {
+    
+  };
+  let json = {};
+  json.q_idx = q_idx;
+  json.answer = answer;
+  if(userId && q_idx && answer)request.send(JSON.stringify(json));
+}
+
+function accessUrl(){
+  let accessUrl = "";
+  if(releaseType === "dev") accessUrl = "https://dev.test.jp/api/";
+  if(releaseType === "stg") accessUrl = "https://stg.test.jp/api/";
+  if(releaseType === "prd") accessUrl = "https://test.jp/api/";
+  return accessUrl;
+}
+</script>
+<% if (data.releaseType === "dev") { %>
+  <script>var dr; var releaseType = "dev";</script>
+<% } %>
+<% if (data.releaseType === "stg") { %>
+  <script>var dr; var releaseType = "stg";</script>
+<% } %>
+<% if (data.releaseType === "prd") { %>
+  <script>var dr; var releaseType = "prd";</script>
+<% } %>

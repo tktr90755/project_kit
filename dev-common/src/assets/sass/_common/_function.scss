@@ -1,0 +1,27 @@
+// pxをvw基準に変換
+@function pxToVw($pxValue, $baseWidth: 1280) {
+	@return (($pxValue / $baseWidth) * 100) + vw;
+}
+
+// 文字サイズ  px → rem
+@mixin fs-pc($value, $base: 10){
+	font-size: (($value/2) / $base) * 1rem;
+}
+@mixin fs-tb($value: 10, $viewport:2800){
+	$rate: 100 / $viewport;
+	font-size: $rate * $value * 1vw;
+}
+@mixin fs-sp($value: 10, $viewport:750){
+	$rate: 100 / $viewport;
+	font-size: $rate * $value * 1vw;
+}
+//各デバイスサイズ調整
+@function pc($value) {
+	@return round($value / 2) * 1px;
+}
+@function tb($value) {
+	@return ($value/2800) * 100 * 1vw;
+}
+@function sp($value) {
+	@return ($value/750) * 100 * 1vw;
+}

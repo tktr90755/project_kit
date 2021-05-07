@@ -1,0 +1,55 @@
+{
+  "name": "project_kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp",
+    "stg": "gulp stg",
+    "prd": "gulp prd",
+    "server": "gulp srv",
+    "_ejs": "gulp _ejs"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "keywords": [],
+  "author": "tktr90755",
+  "license": "MIT",
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/tktr90755/project_kit.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "del": "^4.1.1",
+    "git-clone": "^0.1.0",
+    "glob": "^7.1.4",
+    "gsap": "^2.1.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-ejs": "^4.1.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.19.1",
+    "lodash": "^4.17.15",
+    "pixi.js": "^5.1.3",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-concat-plugin": "^3.0.0",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "gulp-rename": "^1.4.0"
+  }
+}

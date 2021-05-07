@@ -1,0 +1,150 @@
+@import "_common/config";
+@import "_common/function";
+@import "_common/mixin";
+@import "_common/keyframe";
+@import "_common/reset";
+
+
+body{
+  background-image: url('/assets/common/images/texture.png');
+  font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "ヒラギノ角ゴ ProN" , "メイリオ", sans-serif;
+}
+
+#wrapper{
+  position: relative;
+  width:100%;
+  min-height: 100vh;
+  margin: 0 auto;
+
+  color: #fff;
+  text-align: center;
+
+  opacity: 0;
+  .banner{
+    position: fixed;
+    right:0;
+    bottom:0;
+    opacity: 0;
+  }
+
+  .loading{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%; 
+    background: rgba(0,0,0,0.5);
+  }
+
+  .modal{
+    opacity: 0;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .modalBg {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .inner,
+    .inner_sp{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+      // width: 70%;
+      max-width: 100%;
+      padding: 40px 0;
+      // background-color: #fff;
+      height : 100%;
+      overflow : auto;
+
+      -ms-overflow-style: none;    /* IE, Edge 対応 */
+      scrollbar-width: none;       /* Firefox 対応 */
+    }
+
+    .inner::-webkit-scrollbar,
+    .inner_sp::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+      display:none;
+    }
+  }
+  
+  .canvasContainer{
+    position: fixed;
+    top:0px;
+    left:0px;
+    z-index: -2;
+    .font0{
+      display: none;
+      font-size: 50px;
+      font-family: "Shuei MaruGo B";
+    }
+    canvas{
+      pointer-events: none;
+    }
+  }
+
+  /* footer */
+  footer{
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+    // position: absolute;
+    // bottom: 0;
+    padding: 10px 0;
+  }
+}
+
+
+/* hover */
+a {
+  opacity:1;
+  transition: 0.3s;
+  color:#f00;
+}
+a:hover{
+  opacity:0.6;
+}
+
+.hover {
+  opacity:1;
+  transition: 0.3s;
+}
+.hover:hover{
+  opacity:0.6;
+}
+
+
+
+.pc{
+  display: block;
+}
+.sp{
+  display: none;
+}
+
+// PC収まらなくなったあたりからのレイアウト
+@media screen and (max-width: 1025px) {
+  .pc{
+    display: block;
+  }
+  .sp{
+    display: none;
+  }
+}
+
+// SPレイアウト
+@media screen and (max-width: 775px) {
+  .pc{
+    display: none;
+  }
+  .sp{
+    display: block;
+  }
+}
+

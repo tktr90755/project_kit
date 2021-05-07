@@ -1,0 +1,45 @@
+@import "_common/config";
+@import "_common/function";
+@import "_common/mixin";
+@import "_common/keyframe";
+@import "_common/reset";
+
+#wrapper{
+  .loading{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%; 
+    background-color: #e7f7f8;
+  }
+
+  .canvasContainer{
+    position: fixed;
+    top:0px;
+    left:0px;
+    z-index: -2;
+    .font0{
+      display: none;
+      font-size: 50px;
+      font-family: "Shuei MaruGo B";
+    }
+    canvas{
+      pointer-events: none;
+    }
+  }
+}
+
+//pc
+@import "_top/l";
+
+// PC収まらなくなったあたりからのレイアウト
+@media screen and (max-width: 1300px + 100px) {
+  @import "_top/m";
+}
+
+// SPレイアウト
+@media screen and (max-width: 736px) {
+  @import "_top/s";
+}

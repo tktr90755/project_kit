@@ -1,0 +1,69 @@
+<%
+	data.currentNum = 0;
+	data.pankuzu = [
+		{
+			title: "TOP",
+			dir: "コンテンツディレクトリ名"
+		}
+	];
+
+  data.siteName = "";
+  data.description = "";
+  data.keywords = "AAA,BBB,CCC";
+  data.url = "https://sample.jp/";
+  data.ogp = "https://sample.jp/assets/images/ogp.jpg";
+  data.ogpTitle = "";
+
+	data.releaseType = "dev";
+	// data.releaseType = "stg";
+	// data.releaseType = "prd";
+%><!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <%- include("../../dev-common/src/include/_head_top", data) %>
+    <%- include("../../dev-common/src/include/_head", data) %>
+    <!-- 各コンテンツのCSS -->
+    <link href="./assets/css/styles.css" rel="stylesheet" type="text/css" />
+    <%- include("../../dev-common/src/include/_head_bottom", data) %>
+  </head>
+
+  <body>
+    <%- include("../../dev-common/src/include/_body_top", data) %>
+    <%- include("../../dev-common/src/include-dev/_dev_header", data) %>
+
+    <div id="wrapper">
+      <%- include("../../dev-common/src/include/_header", data) %>
+
+      <!--  content -->
+      <p>0000000000000000000000000</p>
+      <p>1111111111111111111111111</p>
+      <p>2222222222222222222222222</p>
+      <br>
+      <p>0000000000000000000000000</p>
+      <p>1111111111111111111111111</p>
+      <p>2222222222222222222222222</p>
+      <br>
+      <p>0000000000000000000000000</p>
+      <p>1111111111111111111111111</p>
+      <p>2222222222222222222222222</p>
+      <br>
+      <p>0000000000000000000000000</p>
+      <p>1111111111111111111111111</p>
+      <p>2222222222222222222222222</p>
+      <div class="canvasContainer">
+        <p class="font0">0123456789SUVdgo、。々「」あいうえおかがきくけげこごさざしじすずせそただちっつてでとどなにねのはびふへぽまみむめもゃやゆょよらりるれわをんァアィイウカキクグケコシスズセッツテトドニノバパビピフブプベボポマミムャュラリルレワンー一両並乗人仲低何余供便倉像優元先入全具内冬出分切初利動十友合品員団地場増夜大女子安室家寝小少山川布帰広床座心性悩想愛感慢所手抱数敷旅族日時景晴替末来楽歳母毎気沢泊海激父牧物犬狭由男疲目着祖私移積立端緒者自良色荷行街裕見買超越足距路車転載近連週遊運過道達違選釣鎌長閉開間降離雨食駐！１５９：ＣＬＯＰＴ～</p>
+      </div>
+      <div class="loading">
+        <div class="common-loading is-fixed">
+          <p class="progress"></p>
+        </div>
+      </div>
+      <!--  content -->
+    </div><!-- // #contents_area -->
+    <%- include("../../dev-common/src/include/_footer", data) %>
+    <%- include("../../dev-common/src/include-dev/_dev_footer", data) %>
+  </body>
+  <!-- 各コンテンツのJS -->
+  <%- include("../../dev-common/src/include/_scripts", data) %>
+  <script src="./assets/js/scripts.js"></script>
+</html>

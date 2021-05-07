@@ -1,0 +1,392 @@
+@charset "UTF-8";
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, var,
+b, i, a,
+dl, dt, dd, ol, ul, li,
+button, input, textarea,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary, main,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1;
+  font-size: 1.6rem;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+}
+
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
+  cursor: pointer;
+}
+
+[disabled] {
+  cursor: default;
+}
+
+[type="number"] {
+  width: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  /* Safari 8 */
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: 0;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+  color: inherit;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select::-ms-value {
+  color: currentColor;
+}
+
+legend {
+  border: 0;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active, a:hover {
+  outline-width: 0;
+}
+
+a,
+area,
+button,
+[role="button"],
+input:not([type=range]),
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: normal;
+}
+
+hr {
+  display: block;
+  height: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+body {
+  background-image: url("/assets/common/images/texture.png");
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "ヒラギノ角ゴ ProN" , "メイリオ", sans-serif;
+}
+
+#wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  /* footer */
+}
+
+#wrapper .banner {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+#wrapper .loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#wrapper .modal {
+  opacity: 0;
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper .modal .modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#wrapper .modal .inner,
+#wrapper .modal .inner_sp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  padding: 40px 0;
+  height: 100%;
+  overflow: auto;
+  -ms-overflow-style: none;
+  /* IE, Edge 対応 */
+  scrollbar-width: none;
+  /* Firefox 対応 */
+}
+
+#wrapper .modal .inner::-webkit-scrollbar,
+#wrapper .modal .inner_sp::-webkit-scrollbar {
+  /* Chrome, Safari 対応 */
+  display: none;
+}
+
+#wrapper .canvasContainer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -2;
+}
+
+#wrapper .canvasContainer .font0 {
+  display: none;
+  font-size: 50px;
+  font-family: "Shuei MaruGo B";
+}
+
+#wrapper .canvasContainer canvas {
+  pointer-events: none;
+}
+
+#wrapper footer {
+  width: 100%;
+  background-color: #000;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* hover */
+a {
+  opacity: 1;
+  transition: 0.3s;
+  color: #f00;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+.hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.hover:hover {
+  opacity: 0.6;
+}
+
+.pc {
+  display: block;
+}
+
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 1025px) {
+  .pc {
+    display: block;
+  }
+  .sp {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .pc {
+    display: none;
+  }
+  .sp {
+    display: block;
+  }
+}
